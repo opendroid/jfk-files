@@ -4,13 +4,14 @@ import glob
 
 
 def extract_filenames(file_path):
-    """Extract the last part of the path as filenames from the .file_path
+    """Extract the last part of the path as filenames from the
+    html file located in {file_path}.
 
     Args:
-        file_path (str): Path to the file containing the failed links
+        file_path (str): Path to the html file containing the links.
 
     Returns:
-        list: List of filenames
+        list: List of PDF filenames
     """
     # Extract complete links from the ../data/webdata.html that end with .pdf
     with open(file_path, "r") as file:
@@ -42,21 +43,30 @@ def extract_filenames(file_path):
 
 def compare_links_and_filenames(links, filenames):
     # Compare the links and filenames
+    not_in_filenames = []
     for link in links:
-        if link.split('/')[-1] not in filenames:
-            print(f"{link} not in filenames")
+        # Sanitize the link, replace %20 with ''
+        # This was done during download_files.py
+        link = link.replace('%20', '')
+        link = link.split('/')[-1]
+        if link not in filenames:
+            not_in_filenames.append(link)
+
+    return not_in_filenames
 
 
 if __name__ == "__main__":
     links = extract_filenames("./data/jfk_files_20250318.html")
-    saved_pdf_path = "../../data/jfk/pdf-20250318"
+    saved_pdf_path = "../../data/jfk/docs/pdf/20250318"
     print(f"Found {len(links)} links")
-    count = range(1, 11)
-    # Extract the filesnames last part of path in ../data/jfk/*.pdf
 
+    # Extract the filesnames last part of path
     filenames = [f.split('/')[-1]
                  for f in glob.glob(os.path.join(saved_pdf_path, "*.pdf"))]
-    compare_links_and_filenames(links, filenames)
-    two_links = [f'{i:2}: {link}' for i, link in zip(count, links[:2])]
-    print(f"PDF Links: {count} links:\n{'\n'.join(two_links)}")
-    print(f"PDF Files: {len(filenames)} filenames: {filenames[:2]}")
+    not_in_filenames = compare_links_and_filenames(links, filenames)
+    if len(not_in_filenames) > 0:
+        print(f"Found {len(not_in_filenames)} links not in filenames")
+        for link in not_in_filenames:
+            print(link)
+    else:
+        print("All links are in the filenames")
