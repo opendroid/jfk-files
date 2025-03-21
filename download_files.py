@@ -41,7 +41,8 @@ def download_files(links, destination_dir):
         response = requests.get(link)
         if response.status_code != 200:
             failed_links.append(link)
-        with open(f"{destination_dir}/{link.split('/')[-1]}", "wb") as file:
+        filename = link.split('/')[-1].replace("%20", "")
+        with open(f"{destination_dir}/{filename}", "wb") as file:
             file.write(response.content)
         pbar.update(1)
     pbar.close()
@@ -62,5 +63,8 @@ def download_files(links, destination_dir):
 
 
 if __name__ == "__main__":
-    links = extract_filenames("./data/jfk_files_20250318.html")
-    download_files(links, "../../data/jfk/pdf-20250318")
+    links1 = extract_filenames("./data/jfk_files_20250320.html")
+    links2 = extract_filenames("./data/jfk_files_20250318.html")
+    links = set(links1) - set(links2)
+    print(f"Downloading {len(links)} files")
+    download_files(links, "../../data/jfk/pdf/pdf-20250320")

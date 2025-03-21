@@ -27,6 +27,10 @@ def extract_images_from_pdf(pdf_path, output_dir):
         for page_num, page in enumerate(doc):
             image_list = page.get_images()
 
+            # Create a directory for the page
+            page_dir = f"{output_dir}/{pdf_name}"
+            Path(page_dir).mkdir(parents=True, exist_ok=True)
+
             # Save each image
             for img_idx, img in enumerate(image_list):
                 xref = img[0]  # image reference number
@@ -34,9 +38,10 @@ def extract_images_from_pdf(pdf_path, output_dir):
                 image_bytes = base_img["image"]
 
                 # Create unique filename
-                image_suffix = f"img{img_idx+1}.{base_img['ext']}"
-                image_filename = f"{pdf_name}_page{page_num+1}_{image_suffix}"
-                image_path = f"{output_dir}/{image_filename}"
+                image_suffix = f"img_{img_idx+1:02d}.{base_img['ext']}"
+                page_suffix = f"page_{page_num+1:03d}"
+                image_filename = f"{pdf_name}_{page_suffix}_{image_suffix}"
+                image_path = f"{output_dir}/{pdf_name}/{image_filename}"
                 n_images += 1
                 # Save image
                 with open(image_path, "wb") as img_file:
@@ -81,7 +86,7 @@ def extract_image_metadata(png_path):
         pdf_name = png_path.split("/")[-1][:index] + ".pdf"
         # Get page number
         index_img = png_path.split("/")[-1].find("_img")
-        page_number = png_path.split("/")[-1][index+5:index_img]
+        page_number = png_path.split("/")[-1][index+6:index_img]
         return {
             "size": image_size,
             "resolution": image_resolution,
@@ -125,14 +130,15 @@ def extract_image_metadata_from_all_png(png_dir, metadata_file):
     """
     # Setup paths
     png_dir = Path(png_dir)
-    png_glob = png_dir.glob("*.png")
+    # Get all the png files in the directory recursively, sorted by name
+    png_glob = sorted(png_dir.glob("**/*.png"))
+
     results = []
     # Add progress bar using tqdm
     images_count = len(list(png_glob))
     progress_bar = tqdm(desc="Images processed",
                         total=images_count, colour="#00FFFF", unit=" images")
     # Reset glob iterator
-    png_glob = png_dir.glob("*.png")
     for i, png_path in enumerate(png_glob):
         r = extract_image_metadata(png_path.as_posix())
         if r is not None:
@@ -149,13 +155,13 @@ def extract_image_metadata_from_all_png(png_dir, metadata_file):
 
 def main():
     # Extract images from all PDFs
-    # pdf_dir = "../../data/jfk/pdf-20250318"
-    # output_dir = "../../data/jfk/png-20250318"
-    # extract_images_from_all_pdf(pdf_dir, output_dir)
+    pdf_dir = "../../data/jfk/docs/pdf/20250318"
+    output_dir = "../../data/jfk/images/images/20250318"
+    extract_images_from_all_pdf(pdf_dir, output_dir)
 
     # Extract image metadata
-    png_dir = "../../data/jfk/png-20250318"
-    metadata_file = "../../data/jfk/png-20250318-metadata.json"
+    png_dir = "../../data/jfk/images/images/20250318"
+    metadata_file = "../../data/jfk/images/images/20250318-metadata.json"
     extract_image_metadata_from_all_png(png_dir, metadata_file)
 
 

@@ -35,12 +35,20 @@ The coding was assisted by the:
 
 The processed data is saved on the huggingface hub.
 
-- [JFK Files](https://huggingface.co/datasets/opendriod/jfk-files)
+- [jfk-assassination-records](https://huggingface.co/datasets/opendriod/jfk-assassination-records)
 
 The HF folder structure is as follows:
+
 ```
-jfk-files/
-    - png-20250318/
-    - png-20250318-metadata.json
-    - pdf-20250318/
+jfk-assassination-records/
+    - pdf/
+        - 104-10016-10021.pdf
+		- 104-10001-10002.pdf
+		- ...
+    - images/
+        - 20250318/
+            - 104-10003-10041
+				- 104-10016-10021_page_001_img_01.png
+				- 104-10016-10021_page_001_img_02.png
+				- ...
 ```
