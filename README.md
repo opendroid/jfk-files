@@ -43,12 +43,12 @@ The HF folder structure is as follows:
 jfk-assassination-records/
     - pdf/
         - 104-10016-10021.pdf
-		- 104-10001-10002.pdf
-		- ...
+        - 104-10001-10002.pdf
+        - ...
     - images/
         - 20250318/
-            - 104-10003-10041
-			    - 104-10016-10021_page_001_img_01.png
-			    - 104-10016-10021_page_001_img_02.png
-			    - ...
+            - 104-10003-10041/
+                - 104-10003-10041_page_001_img_01.png
+                - 104-10003-10041_page_001_img_02.png
+                - ...
 ```
