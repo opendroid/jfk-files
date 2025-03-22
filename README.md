@@ -2,6 +2,7 @@
 
 The JFK files were launched on Mar 18, 2025. The files were posted on
 [JFK Assassination Records - 2025 Documents Release](https://www.archives.gov/research/jfk/release-2025).
+The project details are on [JFK Assassination Records Analysis](https://docs.google.com/document/d/1zvEYoMBZEyy1ABDUnuSLDPGfOWRKW0euB-CbaC4uUXA/edit?usp=sharing)
 
 The purpose of this directory is to:
 1. Download all 2,182 files.
@@ -23,6 +24,16 @@ The coding was assisted by the:
 3. ChatGPT for general coding assistance.
 
 ## Plan
+
+1. Download the files from the web page.
+2. Process the images using OCR
+3. Improce the OCR using LLMs
+4. Check the results using LLMs
+5. Save the results
+
+### Download the files
+The `data_prep` contains utilities to extract the filenames from webspage and download the files.
+
 1. Manually download the webpage from [URL](https://www.archives.gov/research/jfk/release-2025). Make sure to select "All" entries in the dropdown.
 2. Saved the webpage as `./data/jfk_files_20250318.html`.
 3. `extract_filenames.py`: parses the webpage to find the links to the files.
@@ -31,13 +42,13 @@ The coding was assisted by the:
 5. `extract_images.py`: extracts the images from the files. The images are saved in the temp directory.
 
 
-# Processed Data
+#### Downlaoded Data
 
-The processed data is saved on the huggingface hub.
+The downloaded data is saved on the:
+- [huggingface](https://huggingface.co/datasets/opendriod/jfk-assassination-records)
+- [Google Storage Bucket](https://storage.googleapis.com/jfk-assassination-records)
 
-- [jfk-assassination-records](https://huggingface.co/datasets/opendriod/jfk-assassination-records)
-
-The HF folder structure is as follows:
+The data folder structure is as follows:
 
 ```
 jfk-assassination-records/
@@ -63,3 +74,6 @@ jfk-assassination-records/
                 - 104-10302-10024_page_002_img_01.png
                 - ...
 ```
+
+### OCR
+The OCTR
