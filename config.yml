@@ -1,0 +1,21 @@
+# You main project configurations
+---
+input_html:
+  mar_18_2025: "./data/jfk_files_20250318.html"
+  mar_20_2025: "./data/jfk_files_20250320.html"
+output_dirs:
+  pdf:
+    mar_18_2025: "/Users/xyz-ai/Developer/data/jfk/docs/pdf/20250318"
+    mar_20_2025: "/Users/xyz-ai/Developer/data/jfk/docs/pdf/20250320"
+  png:
+    mar_18_2025: "/Users/xyz-ai/Developer/data/jfk/images/images/20250318"
+    mar_20_2025: "/Users/xyz-ai/Developer/data/jfk/images/images/20250320"
+  text:
+    mar_18_2025: "/Users/xyz-ai/Developer/data/jfk/docs/text/20250318"
+    mar_20_2025: "/Users/xyz-ai/Developer/data/jfk/docs/text/20250320"
+sample_image:
+  page1: "/Users/xyz-ai/Developer/data/jfk/images/images/20250318/198-10007-10029/198-10007-10029_page_001_img_01.png"
+  page2: "/Users/xyz-ai/Developer/data/jfk/images/images/20250318/198-10007-10029/198-10007-10029_page_002_img_01.png"
+sample_pdf:
+  doc1: "/Users/xyz-ai/Developer/data/jfk/docs/pdf/20250318/198-10007-10029.pdf"
+  doc2: "/Users/xyz-ai/Developer/data/jfk/docs/pdf/20250318/104-10061-10115.pdf"

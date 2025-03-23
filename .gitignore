@@ -167,3 +167,4 @@ data/jfk-files-20250318.tar
 data/jfk/
 data/*.pdf
 data/jfk-images/
+config.yaml
