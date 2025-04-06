@@ -25,16 +25,19 @@ def read_jsonl_file(bucket_name, blob_name):
 
 def print_prediction(prediction, console):
     # Parse the prediction
-    prediction = prediction['response']['candidates'][0]['content']['parts'][0]['text']
+    content = prediction['response']['candidates'][0]['content']
+    text = content['parts'][0]['text']
     # Use Markdown to print the prediction
-    markdown = Markdown(prediction)
+    markdown = Markdown(text)
     console.print(markdown)
 
 
 def main():
     # Read the JSONL file from GCS
     bucket_name = "jfk-assassination-records"
-    blob_name = "text/gemini-flash-lite/prediction-model-2025-04-06T05:15:27.793955Z/predictions.jsonl"
+    blob_name = "text/gemini-flash-lite/"
+    blob_name += "prediction-model-2025-04-06T05:15:27.793955Z/"
+    blob_name += "predictions.jsonl"
     # Read the JSONL file
     predictions = read_jsonl_file(bucket_name, blob_name)
     # Print the results in a human readable format

@@ -107,8 +107,8 @@ def create_and_upload_input_file(image_uris, prompt, gcs_requests_uri):
     Args:
         image_uris (list): A list of GCS URIs (gs://...) to the images.
         prompt (str): The text prompt to include in each prediction request.
-        gcs_requests_uri (str): The GCS URI (gs://...) where the generated JSONL
-                              file should be uploaded.
+        gcs_requests_uri (str): The GCS URI (gs://...) where the generated
+                              JSONL file should be uploaded.
 
     Raises:
         ValueError: If the gcs_requests_uri is not a valid GCS path.
@@ -173,7 +173,7 @@ def step1_get_all_image_uris():
 
     Returns:
         list: A list of strings, where each string is a GCS URI (gs://...)
-              pointing to a .png file. Returns an empty list if no files are found.
+              pointing to a .png file. Returns an empty list if no files.
     """
     # 1. Get all PNG image files from the configured GCS input path.
     images_gcs_uris = gcs_png_files_uris(INPUT_BUCKET_NAME, IMAGES_DIR)
@@ -190,7 +190,7 @@ def step1_get_all_image_uris():
 
 def step2_generate_and_save_jsonl_file(images_gcs_uris):
     """
-    Generates a JSON Lines file formatted for Gemini multimodal batch prediction
+    Generates a JSON Lines file for Gemini multimodal batch prediction
     and uploads it to Google Cloud Storage. Each line contains the prompt and
     a reference to one image.
     """
