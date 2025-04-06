@@ -1,4 +1,4 @@
-from pymupdf import fitz
+import fitz
 from pathlib import Path
 from PIL import Image
 import json
@@ -101,7 +101,7 @@ def extract_image_metadata(png_path):
         return None
 
 
-def extract_images_from_all_pdf(pdf_dir, output_dir):
+def extract_images_pdfs(pdf_dir, output_dir):
     """Extract images from all PDFs in the given directory.
 
     Args:
@@ -154,14 +154,14 @@ def extract_image_metadata_from_all_png(png_dir, metadata_file):
 
 
 def main():
-    # Extract images from all PDFs
-    pdf_dir = "../../data/jfk/docs/pdf/20250318"
-    output_dir = "../../data/jfk/images/images/20250318"
-    extract_images_from_all_pdf(pdf_dir, output_dir)
+    # Extract images from PDFs
+    pdf_dir = "../../../data/jfk/docs/pdf/20250403"
+    output_dir = "../../../data/jfk/images/images/20250403"
+    extract_images_pdfs(pdf_dir, output_dir)
 
     # Extract image metadata
-    png_dir = "../../data/jfk/images/images/20250318"
-    metadata_file = "../../data/jfk/images/images/20250318-metadata.json"
+    png_dir = "../../../data/jfk/images/images/20250403"
+    metadata_file = "../../../data/jfk/images/images/20250403-metadata.json"
     extract_image_metadata_from_all_png(png_dir, metadata_file)
 
 

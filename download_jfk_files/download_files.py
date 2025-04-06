@@ -13,7 +13,7 @@
 import requests
 from tqdm import tqdm
 import os
-from extract_filenames import extract_filenames
+from extract_pdf_urls import extract_pdf_urls
 
 
 def download_files(links, destination_dir):
@@ -68,8 +68,15 @@ def download_files(links, destination_dir):
 
 
 if __name__ == "__main__":
-    links1 = extract_filenames("./data/jfk_files_20250320.html")
-    links2 = extract_filenames("./data/jfk_files_20250318.html")
-    links = set(links1) - set(links2)
+    links1 = extract_pdf_urls("../data/jfk_files_20250320.html")
+    links2 = extract_pdf_urls("../data/jfk_files_20250318.html")
+    links3 = extract_pdf_urls("../data/jfk_files_20250403.html")
+    # Only download the files that are not already downloaded
+    links = set(links3) - set(links1) - set(links2)
+    # Print the links that are not already downloaded
+    print(f"Date 20250320: {len(links1)}")
+    print(f"Date 20250318: {len(links2)}")
+    print(f"Date 20250403: {len(links3)}")
+    print(f"New files on 20250403: {len(links)}")
     print(f"Downloading {len(links)} files")
-    download_files(links, "../../data/jfk/docs/pdf/20250320")
+    download_files(links, "../../../data/jfk/docs/pdf/20250403")

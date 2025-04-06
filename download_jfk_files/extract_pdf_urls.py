@@ -3,15 +3,14 @@ import os
 import glob
 
 
-def extract_filenames(file_path):
-    """Extract the last part of the path as filenames from the
-    html file located in {file_path}.
+def extract_pdf_urls(file_path):
+    """Extract the pdf links from the html file located in {file_path}.
 
     Args:
         file_path (str): Path to the html file containing the links.
 
     Returns:
-        list: List of PDF filenames
+        list: List of PDF URLs
     """
     # Extract complete links from the ../data/webdata.html that end with .pdf
     with open(file_path, "r") as file:
@@ -41,32 +40,32 @@ def extract_filenames(file_path):
     return list(set(links))
 
 
-def compare_links_and_filenames(links, filenames):
+def get_links_not_downloaded(links, filenames):
     # Compare the links and filenames
-    not_in_filenames = []
+    not_downloaded = []
     for link in links:
         # Sanitize the link, replace %20 with ''
         # This was done during download_files.py
         link = link.replace('%20', '')
         link = link.split('/')[-1]
         if link not in filenames:
-            not_in_filenames.append(link)
+            not_downloaded.append(link)
 
-    return not_in_filenames
+    return not_downloaded
 
 
 if __name__ == "__main__":
-    links = extract_filenames("./data/jfk_files_20250318.html")
+    links = extract_pdf_urls("./data/jfk_files_20250318.html")
     saved_pdf_path = "../../data/jfk/docs/pdf/20250318"
     print(f"Found {len(links)} links")
 
     # Extract the filesnames last part of path
     filenames = [f.split('/')[-1]
                  for f in glob.glob(os.path.join(saved_pdf_path, "*.pdf"))]
-    not_in_filenames = compare_links_and_filenames(links, filenames)
-    if len(not_in_filenames) > 0:
-        print(f"Found {len(not_in_filenames)} links not in filenames")
-        for link in not_in_filenames:
+    not_downloaded = get_links_not_downloaded(links, filenames)
+    if len(not_downloaded) > 0:
+        print(f"Found {len(not_downloaded)} links not in filenames")
+        for link in not_downloaded:
             print(link)
     else:
         print("All links are in the filenames")

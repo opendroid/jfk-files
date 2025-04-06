@@ -21,15 +21,49 @@ The purpose of this directory is to:
 The coding was assisted by the:
 1. __cursor__ code editor using __Claude-3.5-Sonnet__.
 2. Grok for difficult problems where sonnet failed.
-3. ChatGPT for general coding assistance.
+3. ChatGPT, Gemini for general coding assistance.
 
 ## Plan
+Note that the LLM results were better than the OCR results. Trying OCR
+for learning purposes. And see if we can use the LLM to improve the OCR
+results.
 
 1. Download the files from the web page.
-2. Process the images using OCR
-3. Improce the OCR using LLMs
-4. Check the results using LLMs
-5. Save the results
+    - March 18, 2025 - 7 PM EST Release: 32,000 pages (1,123 PDF files)
+    - March 18, 2025 - 10:30 PM EST Release: 31,400 pages (1,059 PDF files)
+    - March 20, 2025 - 9:30 PM EST Release: 13,700 pages (161 PDF files)
+    - March 26, 2025 - 3:30 PM EST Release: 53 pages (16 PDF files)
+    - April 03, 2025 - 7:00 PM EST Release: 704 pages (207 PDF files)
+2. OCR:
+    - Use OCR to extract the text from the images.
+    - Improve the OCR using LLMs (Lamma 4.0).
+3. Improve the OCR using LLMs:
+    - Use LLMs to improve the OCR results.
+    - Save the improved OCR results to the huggingface hub.
+4. Do OCR using Gemini 2.5 Flash Lite ($20 for 80,000 images)
+5. Save the results:
+    - Save the OCR results to the huggingface hub.
+    - To the GCP bucket.
+
+## Code Organization
+
+The code is organized as follows:
+
+```
+- data/ # Saved the data files locally
+    - jfk_files_20250318.html
+- download_jfk_files/ # Contains the code to download the pdf and extract the images
+    - extract_pdf_urls.py; Get links to the pdfs to be downloaded.
+    - download_files.py; Download the pdfs (using the links).
+    - extract_images.py; Extract the images from the pdfs.
+- ocr/ # Contains the code to OCR the images
+    - tesseract.py: Use Tesseract to do OCR.
+    - experiments_ocr.py: Experiment with the OCR libraries.
+- ocr_LLM/ # Contains the code to improve the OCR using LLMs
+    - batch_submit_flash.py: Submit a batch job to Gemini Flash.
+    - batch_results_flash.py: Get the JSON from GCS and interpret the results.
+    - experiments_llm.py: Experiment with the LLM OCR libraries.
+```
 
 ### Download the files
 The `data_prep` contains utilities to extract the filenames from webspage and download the files.
