@@ -31,17 +31,17 @@ BATCH_JOB_OUTPUT_PARENT_URI = f"gs://{OUTPUT_BUCKET_NAME}"
 # --- Temporary Input File Configuration ---
 # Creates a unique name for the input file based on the current timestamp
 suffix = datetime.now().strftime('%Y%m%d_%H%M')
-JSONL_REQUESTS_FILENAME = f"gemini-flash-lite_{suffix}.jsonl"
-jsonl_requests_uri = f"gs://{INPUT_BUCKET_NAME}/batch_job_temp/"
+JSONL_REQUESTS_FILENAME = "flash_batch.jsonl"
+jsonl_requests_uri = f"gs://{INPUT_BUCKET_NAME}/batch_job_requests/"
 jsonl_requests_uri += JSONL_REQUESTS_FILENAME
 JSONL_REQUESTS_GCS_URI = jsonl_requests_uri
 
 # --- Helper Functions ---
 
 
-def gcs_png_files_uris(bucket_name, prefix):
+def gcs_image_files_uris(bucket_name, prefix):
     """
-    Lists all .png file URIs in a specified GCS bucket and prefix.
+    Lists all image file URIs in a specified GCS bucket and prefix.
 
     Args:
         bucket_name (str): The name of the GCS bucket.
@@ -49,25 +49,24 @@ def gcs_png_files_uris(bucket_name, prefix):
 
     Returns:
         list: A list of strings, where each string is a GCS URI (gs://...)
-              pointing to a .png file. Returns an empty list if no files are
+              pointing to an image file. Returns an empty list if no files are
               found.
     """
     bucket = storage_client.bucket(bucket_name)
     blobs = bucket.list_blobs(prefix=prefix)
-    png_files = []
-    print(f"Listing PNG files in gs://{bucket_name}/{prefix}...")
+    image_files = []
+    print(f"Listing image files in gs://{bucket_name}/{prefix}...")
     count = 0
     for blob in blobs:
-        # Check if the blob name ends with .png (case-insensitive)
-        # and ensure it's not just the directory placeholder object itself.
-        if blob.name.lower().endswith(".png") and blob.name != prefix:
-            png_files.append(f"gs://{bucket_name}/{blob.name}")
+        # Check if the blob name ends with an image extension and not in prefix
+        if (blob.name.lower().endswith((".png", ".jpeg", ".jpg")) and
+                blob.name != prefix):
+            image_files.append(f"gs://{bucket_name}/{blob.name}")
             count += 1
-            # Provide progress update every 1000 files found
+            # Provide progress update every 10000 files found
             if count % 10000 == 0:
                 print(f"  Found {count} PNG files so far...")
-    print(f"Found a total of {len(png_files)} PNG files.")
-    return png_files
+    return image_files
 
 
 def get_request_jsonl_name(base_uri, idx):
@@ -98,6 +97,24 @@ def get_request_jsonl_name(base_uri, idx):
     return base_uri
 
 
+def get_mime_type(uri):
+    """
+    Determines the MIME type based on the file extension of the given URI.
+
+    Args:
+        uri (str): The URI of the file to determine the MIME type for.
+
+    Returns:
+        str: The MIME type of the file.
+    """
+    mime_type = "image/png"
+    if uri.endswith(".jpeg") or uri.endswith(".jpg"):
+        mime_type = "image/jpeg"
+    elif uri.endswith(".pdf"):
+        mime_type = "application/pdf"
+    return mime_type
+
+
 def create_and_upload_input_file(image_uris, prompt, gcs_requests_uri):
     """
     Creates a JSON Lines file formatted for Gemini multimodal batch prediction
@@ -119,6 +136,7 @@ def create_and_upload_input_file(image_uris, prompt, gcs_requests_uri):
     # Define the structure for a single prediction instance, matching the
     # format expected by the Vertex AI Gemini batch prediction API.
     for uri in image_uris:
+        # mime_types based on the file extension
         instance = {
             "request": {
                 "contents": [
@@ -126,7 +144,7 @@ def create_and_upload_input_file(image_uris, prompt, gcs_requests_uri):
                         "role": "user",
                         "parts": [
                             {"text": prompt},
-                            {"fileData": {"mime_type": "image/png",
+                            {"fileData": {"mime_type": get_mime_type(uri),
                                           "file_uri": uri}}
                         ]
                     }
@@ -176,9 +194,9 @@ def step1_get_all_image_uris():
               pointing to a .png file. Returns an empty list if no files.
     """
     # 1. Get all PNG image files from the configured GCS input path.
-    images_gcs_uris = gcs_png_files_uris(INPUT_BUCKET_NAME, IMAGES_DIR)
+    images_gcs_uris = gcs_image_files_uris(INPUT_BUCKET_NAME, IMAGES_DIR)
     # Save the list of image URIs to a file
-    with open('./data/png_uris.txt', 'w') as f:
+    with open('../data/png_uris.txt', 'w') as f:
         for uri in images_gcs_uris:
             f.write(uri + '\n')
     # Exit if no image files were found to process.
@@ -199,7 +217,7 @@ def step2_generate_and_save_jsonl_file(images_gcs_uris):
     try:
         # The prompt is passed here and packaged
         # inside the function to build each line of the JSONL file.
-        prompt = open('data/transcription_prompt.txt', 'r').read()
+        prompt = open('../data/transcription_prompt.txt', 'r').read()
         create_and_upload_input_file(
             images_gcs_uris, prompt, JSONL_REQUESTS_GCS_URI)
     except Exception as e:
@@ -254,11 +272,12 @@ def main():
     3. Configures and submits the Vertex AI Batch Prediction Job.
     """
     # png_uris = step1_get_all_image_uris()
+    # print(f"Found a total of {len(png_uris)} PNG files.")
     # if png_uris is None:
     #     return
     # step2_generate_and_save_jsonl_file(png_uris)
 
-    requests_json_nl = "gs://jfk-assassination-records/text-prompt.jsonl"
+    requests_json_nl = "gs://jfk-assassination-records/test_requests.jsonl"
     output_jsonl_uri = BATCH_JOB_OUTPUT_PARENT_URI
     step3_submit_batch_job(requests_json_nl, output_jsonl_uri)
 
