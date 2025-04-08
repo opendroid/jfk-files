@@ -1,0 +1,177 @@
+
+Total cost: $17
+all_predictions.jsonl: 83_623 files transcribed
+No transcriptions done by the model count: 153
+Total prompt text tokens: 149_571_869
+Total prompt image tokens: 149_148_082
+Total response tokens: 3_658_539
+
+Errors messages, files whose response was not complete JSON:
+1. Error parsing line: Unterminated string starting at: line 1 column 1658 (char 1657):
+{"status":"","processed_time":"2025-04-07T05:44:27.011+00:00","request":{"contents":[{"parts":[{"fileData":null,"text":"You are an expert OCR and text interpretation system.\nYour task is to accurately extract and interpret text from images.\nThe images are related to the JFK assassination legally released documents.\nYou will receive one image, which is primarily containing English text from the 1960s.\nSome text is typewritten, and some may be handwritten.\n\n[User Instruction]\nFor each image provided, perform the following:\n\n1. **Accurate Text Extraction:** Extract all visible text, including both typewritten and handwritten portions, with high fidelity.\n2. **Contextual Interpretation:** If the handwritten text is unclear or ambiguous, use contextual clues from the surrounding typewritten text or other visible elements to interpret it correctly. Aim for the most likely and accurate interpretation.\n3. **Clear Presentation:** Present the extracted and interpreted text clearly. Maintain the original reading order as much as possible.\n4. **Preserve Formatting:** If the text has any apparent formatting (e.g., line breaks, indentation), attempt to preserve it in your output.\n5. **Handle Imperfections:** Acknowledge and attempt to correct for common OCR errors, such as misreading similar characters (e.g., \"l\" vs. \"1\", \"O\" vs. \"0\").\n"},{"fileData":{"file_uri":"gs://jfk-assassination-records/images/20250320/124-10264-10206_multirif/124-10264-10206_multirif_page_117_img_01.png","mime_type":"image/png"},"text":null}],"role":"user"}]},"response":{"candidates":[{"avgLogprobs":-0.0843224168013918,"content":{"parts":[{"text":"Here is the extracted and interpreted text:\n\n```\n- 6 -\n\n30. All materials reflecting that' \"(w) ith Bureau approval,\n(William C. Sullivan) had previously given (Ralph) McGill\nsome of the basic facts concerning King's connections with\ncommunism and his (deleted),\" as indicated in Mr. Sullivan's\nJanuary 21, 1965 memorandum to Mr. A. H. Belmont, subject\n\"Martin Luther King, Jr., Security Matter - C.\"\n\n31. All materials reflecting contact by Special Agent Alden\nF. Miller or by any FBI Headquarters officials with\nEugene Patterson concerning Martin Luther King, Jr., as\nproposed by Special Agent Miller in a telephone conver-\nsation with Mr. Sullivan on January 15, 1964. (See\nMr. Sullivan's 1/16/64 memorandum to Mr. Belmont, subject\n\"Communist Party, USA, Negro Question, Communist Influence\nin Racial Matters, Internal Security - c.\")\n\n32. All materials reflecting the \"further recommendation as\nto whether we are in a position at that time (the end\nof a 90-day period, or sooner if conditions permit) to\ntake further action against King and the SCLC without\nembarrassment to the Bureau,\" as promised in Mr. Sullivan's\nDecember 24, 1963 memorandum to Mr. Belmont, subject\n\"Communist Party, USA, Negro Question, Communist Influence\nin Racial Matters, Internal Security - Communist.\"\n\n33. All materials reflecting \"the suggestion recently made by\n(the Atlanta field office) that another conference be\nheld at the Seat of Government with representatives of\n(the Atlanta) office and the New York Office,\" as indicated\nin the second paragraph of the Director's April 1, 1964\nletter to the SAC, Atlanta, captioned \"Communist Party, USA,\nNegro Question, Communist Influence in Racial Matters,\nInternal Security - C.\"\n\n34. All materials reflecting recommendations for, and\ntot 16\napproval of, the sending of the Director's April 1, 1964\nletter to the SAC, Atlanta, captioned \"Communist Party,\nUSA, Negro Question, Communist Influence in Racial\nMatters, Internal Security - C.\"\n
+2. Error parsing line: Expecting value: line 1 column 1 (char 0):
+\n35. All materials comprising the \"separate correspondence\"\nbetween FBI Headquarters and the Atlanta field office\nconcerning the \"specific matters dealt with in Atlanta's\nletter (of 4/14/64)\" as indicated in the Director's\n4/24/64 letter to the SAC, Atlanta, captioned \"Communist\nParty, USA, Negro Question, Communist Influence in\nRacial Matters, Internal Security - C.\"\n```\nHandwritten annotations:\n*   \"tot 16\" next to item 34\n*   A partially visible, likely handwritten signature, next to item 35\n"}],"role":"model"},"finishReason":"STOP"}],"createTime":"2025-04-07T05:44:27.179114Z","modelVersion":"gemini-2.0-flash-lite-001@default","responseId":"O2bzZ6r3Cvv8hMIP_vOI4Ac","usageMetadata":{"candidatesTokenCount":627,"candidatesTokensDetails":[{"modality":"TEXT","tokenCount":627}],"promptTokenCount":3613,"promptTokensDetails":[{"modality":"IMAGE","tokenCount":3354},{"modality":"TEXT","tokenCount":259}],"totalTokenCount":4240,"trafficType":"ON_DEMAND"}}}
+3. Error parsing line: Unterminated string starting at: line 1 column 1641 (char 1640):
+{"status":"","processed_time":"2025-04-07T01:39:10.549+00:00","request":{"contents":[{"parts":[{"fileData":null,"text":"You are an expert OCR and text interpretation system.\nYour task is to accurately extract and interpret text from images.\nThe images are related to the JFK assassination legally released documents.\nYou will receive one image, which is primarily containing English text from the 1960s.\nSome text is typewritten, and some may be handwritten.\n\n[User Instruction]\nFor each image provided, perform the following:\n\n1. **Accurate Text Extraction:** Extract all visible text, including both typewritten and handwritten portions, with high fidelity.\n2. **Contextual Interpretation:** If the handwritten text is unclear or ambiguous, use contextual clues from the surrounding typewritten text or other visible elements to interpret it correctly. Aim for the most likely and accurate interpretation.\n3. **Clear Presentation:** Present the extracted and interpreted text clearly. Maintain the original reading order as much as possible.\n4. **Preserve Formatting:** If the text has any apparent formatting (e.g., line breaks, indentation), attempt to preserve it in your output.\n5. **Handle Imperfections:** Acknowledge and attempt to correct for common OCR errors, such as misreading similar characters (e.g., \"l\" vs. \"1\", \"O\" vs. \"0\").\n"},{"fileData":{"file_uri":"gs://jfk-assassination-records/images/20250318/104-10183-10355/104-10183-10355_page_025_img_01.png","mime_type":"image/png"},"text":null}],"role":"user"}]},"response":{"candidates":[{"avgLogprobs":-0.19959978310458631,"content":{"parts":[{"text":"Here's the extracted and interpreted text:\n\n```\n114-0000\n\nIMMEDIATE\n\nCONFIDENTIAL\n\nON UNIT-NOTIFIED\n\nMESSAGE\n\nSECRET\n(When Filled In).\n\nTOTAL COPIES\nAROUND\n\nISSUED\nSLOTTED\n\nREPRODUCTION OF THIS COPY PROHIBITED\n\nINDEX \t ☐ YES \t☐ NO\n\nCLASSIFY TO CS FILE NO.\n\nZ\n\n☑ REF TO CS FILE NO.\n\n☐ FILE AID \t☐ RETURN TO\n\nFM BY\n
+4. Error parsing line: Expecting value: line 1 column 1 (char 0):
+ACTION UNIT\n\nFILE, VR\n\nION NO.\n\nPAGE 2 WH/MIAMI 6565 SECRET\nAND CLOSE TO RAUL ROA. ALSO HAD BEEN CLOSE FOLLOWER OF\nCHE GUEVARRA. AMMUG-I COULD ALSO TALK TO HECTOR IN\nCOMPLETE CONFIDENCE, BUT NOT WITH SAME CONFIDENCE AS\nWITH ROBERTO.\n3. DIRECTOR: POUCHING REF D, WHICH IS DEBRIEFING\nOF AMMUG-1 ON ROBERTO AND HECTOR.\n4. MADRID: PLS PUT BOTH BROTHERS ON WATCHLIST.\nESPECIALLY INTERESTED IN PUTTING AMMUG-1 IN CONTACT\nWITH ROBERTO WHEN HE TRAVELES TO EUROPE AGAIN.\n5. PARIS: PLS QUERY UNCOSMIC-1 FOR ANY FURTHER\nDETAILS HE CAN RECALL ABOUT TALKS WITH ROBERTO (REF A).\n6 FILE 201-276598 AND 201-749651. GP-1\n\nSECRET\n\nSECRET\n\n201-749651\n```\n"}],"role":"model"},"finishReason":"STOP"}],"createTime":"2025-04-07T01:39:10.755435Z","modelVersion":"gemini-2.0-flash-lite-001@default","responseId":"vizzZ-uNLuu4qsMPqcjG8Ac","usageMetadata":{"candidatesTokenCount":332,"candidatesTokensDetails":[{"modality":"TEXT","tokenCount":332}],"promptTokenCount":3613,"promptTokensDetails":[{"modality":"IMAGE","tokenCount":3354},{"modality":"TEXT","tokenCount":259}],"totalTokenCount":3945,"trafficType":"ON_DEMAND"}}}
+
+JSON Errors were in files:
+gs://jfk-assassination-records/images/20250318/104-10183-10355/104-10183-10355_page_025_img_01.png
+gs://jfk-assassination-records/images/20250320/124-10264-10206_multirif/124-10264-10206_multirif_page_117_img_01.png
+Two were not unknwon
+
+These files were not transcribed:
+1: gs://jfk-assassination-records/images/20250318/104-10076-10372/104-10076-10372_page_002_img_01.png
+2: gs://jfk-assassination-records/images/20250318/104-10075-10099/104-10075-10099_page_002_img_01.png
+3: gs://jfk-assassination-records/images/20250318/104-10106-10215/104-10106-10215_page_001_img_01.png
+4: gs://jfk-assassination-records/images/20250318/104-10114-10152/104-10114-10152_page_001_img_01.png
+5: gs://jfk-assassination-records/images/20250318/104-10098-10401/104-10098-10401_page_002_img_01.png
+6: gs://jfk-assassination-records/images/20250318/104-10163-10087/104-10163-10087_page_037_img_01.png
+7: gs://jfk-assassination-records/images/20250318/104-10164-10099/104-10164-10099_page_036_img_01.png
+8: gs://jfk-assassination-records/images/20250318/104-10166-10120/104-10166-10120_page_026_img_01.png
+9: gs://jfk-assassination-records/images/20250318/104-10165-10087/104-10165-10087_page_061_img_01.png
+10: gs://jfk-assassination-records/images/20250318/104-10170-10109/104-10170-10109_page_036_img_01.png
+11: gs://jfk-assassination-records/images/20250318/104-10172-10112/104-10172-10112_page_021_img_01.png
+12: gs://jfk-assassination-records/images/20250318/104-10172-10112/104-10172-10112_page_076_img_01.png
+13: gs://jfk-assassination-records/images/20250318/104-10176-10004/104-10176-10004_page_160_img_01.png
+14: gs://jfk-assassination-records/images/20250318/104-10176-10006/104-10176-10006_page_072_img_01.png
+15: gs://jfk-assassination-records/images/20250318/104-10176-10073/104-10176-10073_page_331_img_01.png
+16: gs://jfk-assassination-records/images/20250318/104-10177-10217/104-10177-10217_page_010_img_01.png
+17: gs://jfk-assassination-records/images/20250318/104-10176-10073/104-10176-10073_page_348_img_01.png
+18: gs://jfk-assassination-records/images/20250318/104-10177-10134/104-10177-10134_page_122_img_01.png
+19: gs://jfk-assassination-records/images/20250318/104-10177-10217/104-10177-10217_page_009_img_01.png
+20: gs://jfk-assassination-records/images/20250318/104-10176-10075/104-10176-10075_page_050_img_01.png
+21: gs://jfk-assassination-records/images/20250318/104-10177-10134/104-10177-10134_page_123_img_01.png
+22: gs://jfk-assassination-records/images/20250318/104-10177-10226/104-10177-10226_page_021_img_01.png
+23: gs://jfk-assassination-records/images/20250318/104-10177-10226/104-10177-10226_page_022_img_01.png
+24: gs://jfk-assassination-records/images/20250318/104-10182-10000/104-10182-10000_page_039_img_01.png
+25: gs://jfk-assassination-records/images/20250318/104-10182-10000/104-10182-10000_page_015_img_01.png
+26: gs://jfk-assassination-records/images/20250318/104-10181-10007/104-10181-10007_page_025_img_01.png
+27: gs://jfk-assassination-records/images/20250318/104-10182-10057/104-10182-10057_page_165_img_01.png
+28: gs://jfk-assassination-records/images/20250318/104-10182-10071/104-10182-10071_page_019_img_01.png
+29: gs://jfk-assassination-records/images/20250318/104-10182-10069/104-10182-10069_page_134_img_01.png
+30: gs://jfk-assassination-records/images/20250318/104-10182-10072/104-10182-10072_page_033_img_01.png
+31: gs://jfk-assassination-records/images/20250318/104-10182-10073/104-10182-10073_page_070_img_01.png
+32: gs://jfk-assassination-records/images/20250318/104-10187-10003/104-10187-10003_page_105_img_01.png
+33: gs://jfk-assassination-records/images/20250318/104-10182-10072/104-10182-10072_page_038_img_01.png
+34: gs://jfk-assassination-records/images/20250318/104-10187-10003/104-10187-10003_page_015_img_01.png
+35: gs://jfk-assassination-records/images/20250318/104-10182-10072/104-10182-10072_page_048_img_01.png
+36: gs://jfk-assassination-records/images/20250318/104-10188-10023/104-10188-10023_page_041_img_01.png
+37: gs://jfk-assassination-records/images/20250318/104-10194-10012/104-10194-10012_page_313_img_01.png
+38: gs://jfk-assassination-records/images/20250318/104-10194-10015/104-10194-10015_page_039_img_01.png
+39: gs://jfk-assassination-records/images/20250318/104-10194-10017/104-10194-10017_page_029_img_01.png
+40: gs://jfk-assassination-records/images/20250318/104-10194-10001/104-10194-10001_page_038_img_01.png
+41: gs://jfk-assassination-records/images/20250318/104-10194-10023/104-10194-10023_page_032_img_01.png
+42: gs://jfk-assassination-records/images/20250318/104-10194-10023/104-10194-10023_page_123_img_01.png
+43: gs://jfk-assassination-records/images/20250318/104-10194-10023/104-10194-10023_page_053_img_01.png
+44: gs://jfk-assassination-records/images/20250318/104-10194-10023/104-10194-10023_page_007_img_01.png
+45: gs://jfk-assassination-records/images/20250318/104-10195-10003/104-10195-10003_page_092_img_01.png
+46: gs://jfk-assassination-records/images/20250318/104-10195-10003/104-10195-10003_page_093_img_01.png
+47: gs://jfk-assassination-records/images/20250318/104-10216-10273/104-10216-10273_page_001_img_01.png
+48: gs://jfk-assassination-records/images/20250318/104-10217-10221/104-10217-10221_page_063_img_01.png
+49: gs://jfk-assassination-records/images/20250318/104-10220-10028/104-10220-10028_page_072_img_01.png
+50: gs://jfk-assassination-records/images/20250318/104-10221-10002/104-10221-10002_page_070_img_01.png
+51: gs://jfk-assassination-records/images/20250318/104-10222-10005/104-10222-10005_page_262_img_01.png
+52: gs://jfk-assassination-records/images/20250318/104-10222-10041/104-10222-10041_page_118_img_01.png
+53: gs://jfk-assassination-records/images/20250318/104-10222-10040/104-10222-10040_page_165_img_01.png
+54: gs://jfk-assassination-records/images/20250318/104-10222-10038/104-10222-10038_page_057_img_01.png
+55: gs://jfk-assassination-records/images/20250318/104-10222-10040/104-10222-10040_page_075_img_01.png
+56: gs://jfk-assassination-records/images/20250318/104-10222-10038/104-10222-10038_page_238_img_01.png
+57: gs://jfk-assassination-records/images/20250318/104-10222-10041/104-10222-10041_page_119_img_01.png
+58: gs://jfk-assassination-records/images/20250318/104-10222-10040/104-10222-10040_page_139_img_01.png
+59: gs://jfk-assassination-records/images/20250318/104-10222-10038/104-10222-10038_page_080_img_01.png
+60: gs://jfk-assassination-records/images/20250318/104-10222-10041/104-10222-10041_page_117_img_01.png
+61: gs://jfk-assassination-records/images/20250318/104-10222-10042/104-10222-10042_page_179_img_01.png
+62: gs://jfk-assassination-records/images/20250318/104-10222-10042/104-10222-10042_page_186_img_01.png
+63: gs://jfk-assassination-records/images/20250318/104-10224-10004/104-10224-10004_page_040_img_01.png
+64: gs://jfk-assassination-records/images/20250318/104-10224-10002/104-10224-10002_page_257_img_01.png
+65: gs://jfk-assassination-records/images/20250318/104-10224-10008/104-10224-10008_page_031_img_01.png
+66: gs://jfk-assassination-records/images/20250318/104-10224-10004/104-10224-10004_page_029_img_01.png
+67: gs://jfk-assassination-records/images/20250318/104-10224-10007/104-10224-10007_page_189_img_01.png
+68: gs://jfk-assassination-records/images/20250318/104-10224-10012/104-10224-10012_page_282_img_01.png
+69: gs://jfk-assassination-records/images/20250318/104-10225-10003/104-10225-10003_page_323_img_01.png
+70: gs://jfk-assassination-records/images/20250318/104-10225-10003/104-10225-10003_page_340_img_01.png
+71: gs://jfk-assassination-records/images/20250318/104-10225-10007/104-10225-10007_page_219_img_01.png
+72: gs://jfk-assassination-records/images/20250318/104-10225-10027/104-10225-10027_page_063_img_01.png
+73: gs://jfk-assassination-records/images/20250318/104-10225-10012/104-10225-10012_page_225_img_01.png
+74: gs://jfk-assassination-records/images/20250318/104-10226-10023/104-10226-10023_page_121_img_01.png
+75: gs://jfk-assassination-records/images/20250318/104-10225-10027/104-10225-10027_page_071_img_01.png
+76: gs://jfk-assassination-records/images/20250318/104-10225-10027/104-10225-10027_page_084_img_01.png
+77: gs://jfk-assassination-records/images/20250318/104-10225-10027/104-10225-10027_page_139_img_01.png
+78: gs://jfk-assassination-records/images/20250318/104-10226-10024/104-10226-10024_page_242_img_01.png
+79: gs://jfk-assassination-records/images/20250318/104-10226-10024/104-10226-10024_page_341_img_01.png
+80: gs://jfk-assassination-records/images/20250318/104-10227-10000/104-10227-10000_page_118_img_01.png
+81: gs://jfk-assassination-records/images/20250318/104-10291-10001/104-10291-10001_page_005_img_01.png
+82: gs://jfk-assassination-records/images/20250318/104-10291-10004/104-10291-10004_page_122_img_01.png
+83: gs://jfk-assassination-records/images/20250318/104-10291-10013/104-10291-10013_page_166_img_01.png
+84: gs://jfk-assassination-records/images/20250318/104-10291-10004/104-10291-10004_page_260_img_01.png
+85: gs://jfk-assassination-records/images/20250318/104-10291-10014/104-10291-10014_page_153_img_01.png
+86: gs://jfk-assassination-records/images/20250318/104-10305-10000/104-10305-10000_page_114_img_01.png
+87: gs://jfk-assassination-records/images/20250318/104-10305-10000/104-10305-10000_page_147_img_01.png
+88: gs://jfk-assassination-records/images/20250318/104-10332-10014/104-10332-10014_page_024_img_01.png
+89: gs://jfk-assassination-records/images/20250318/104-10433-10209/104-10433-10209_page_220_img_01.png
+90: gs://jfk-assassination-records/images/20250318/104-10433-10209/104-10433-10209_page_244_img_01.png
+91: gs://jfk-assassination-records/images/20250318/104-10433-10212/104-10433-10212_page_120_img_01.png
+92: gs://jfk-assassination-records/images/20250318/104-10433-10209/104-10433-10209_page_245_img_01.png
+93: gs://jfk-assassination-records/images/20250318/104-10438-10237/104-10438-10237_page_008_img_01.png
+94: gs://jfk-assassination-records/images/20250318/104-10517-10120/104-10517-10120_page_001_img_01.png
+95: gs://jfk-assassination-records/images/20250318/124-10179-10221/124-10179-10221_page_235_img_01.png
+96: gs://jfk-assassination-records/images/20250318/124-10190-10075/124-10190-10075_page_2105_img_01.png
+97: gs://jfk-assassination-records/images/20250318/124-10271-10011_multirif/124-10271-10011_multirif_page_056_img_01.png
+98: gs://jfk-assassination-records/images/20250318/124-10271-10299_multirif/124-10271-10299_multirif_page_056_img_01.png
+99: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1224_img_01.png
+100: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1079_img_01.png
+101: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1395_img_01.png
+102: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1221_img_01.png
+103: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1225_img_01.png
+104: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1941_img_01.png
+105: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1937_img_01.png
+106: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2107_img_01.png
+107: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1726_img_01.png
+108: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2476_img_01.png
+109: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1748_img_01.png
+110: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1772_img_01.png
+111: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2458_img_01.png
+112: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_1959_img_01.png
+113: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2149_img_01.png
+114: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2159_img_01.png
+115: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2802_img_01.png
+116: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2998_img_01.png
+117: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2627_img_01.png
+118: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_3050_img_01.png
+119: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_597_img_01.png
+120: gs://jfk-assassination-records/images/20250318/124-10273-10289_redacted/124-10273-10289_redacted_page_2718_img_01.png
+121: gs://jfk-assassination-records/images/20250318/124-10274-10125/124-10274-10125_page_846_img_01.png
+122: gs://jfk-assassination-records/images/20250318/124-10274-10125/124-10274-10125_page_808_img_01.png
+123: gs://jfk-assassination-records/images/20250318/157-10014-10117/157-10014-10117_page_046_img_01.png
+124: gs://jfk-assassination-records/images/20250318/157-10014-10117/157-10014-10117_page_063_img_01.png
+125: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_450_img_01.png
+126: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_368_img_01.png
+127: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_452_img_01.png
+128: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_032_img_01.png
+129: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_446_img_01.png
+130: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_015_img_01.png
+131: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_463_img_01.png
+132: gs://jfk-assassination-records/images/20250318/157-10014-10242/157-10014-10242_page_453_img_01.png
+133: gs://jfk-assassination-records/images/20250318/180-10060-10477/180-10060-10477_page_009_img_01.png
+134: gs://jfk-assassination-records/images/20250318/180-10060-10470/180-10060-10470_page_007_img_01.png
+135: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_126_img_01.png
+136: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_228_img_01.png
+137: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_163_img_01.png
+138: gs://jfk-assassination-records/images/20250318/180-10068-10324/180-10068-10324_page_009_img_01.png
+139: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_087_img_01.png
+140: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_199_img_01.png
+141: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_148_img_01.png
+142: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_168_img_01.png
+143: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_167_img_01.png
+144: gs://jfk-assassination-records/images/20250318/180-10073-10093/180-10073-10093_page_220_img_01.png
+145: gs://jfk-assassination-records/images/20250318/194-10005-10140/194-10005-10140_page_002_img_01.png
+146: gs://jfk-assassination-records/images/20250318/198-10007-10022/198-10007-10022_page_002_img_01.png
+147: gs://jfk-assassination-records/images/20250320/124-10264-10193/124-10264-10193_page_143_img_01.png
+148: gs://jfk-assassination-records/images/20250320/124-10273-10012_multirif/124-10273-10012_multirif_page_159_img_01.png
+149: gs://jfk-assassination-records/images/20250320/124-10273-10071_multirif/124-10273-10071_multirif_page_035_img_01.png
+150: gs://jfk-assassination-records/images/20250320/124-10273-10022_multirif/124-10273-10022_multirif_page_215_img_01.png
+151: gs://jfk-assassination-records/images/20250320/124-10273-10022_multirif/124-10273-10022_multirif_page_160_img_01.png
+152: gs://jfk-assassination-records/images/20250320/206-10001-10013/206-10001-10013_page_026_img_01.png
+153: gs://jfk-assassination-records/images/20250320/144-10001-10213/144-10001-10213_page_005_img_01.png

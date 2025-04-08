@@ -11,7 +11,7 @@ from google.cloud import storage
 import vertexai
 from vertexai.batch_prediction import BatchPredictionJob
 from datetime import datetime
-
+import time
 # --- Configuration ---
 PROJECT_ID = "jfk-assassination-records"  # Your Google Cloud Project ID
 LOCATION = "us-central1"
@@ -277,9 +277,13 @@ def main():
     #     return
     # step2_generate_and_save_jsonl_file(png_uris)
 
-    requests_json_nl = "gs://jfk-assassination-records/test_requests.jsonl"
-    output_jsonl_uri = BATCH_JOB_OUTPUT_PARENT_URI
-    step3_submit_batch_job(requests_json_nl, output_jsonl_uri)
+    # Done until - 005
+    for batch in range(6, 84):
+        requests_json_nl = "gs://jfk-assassination-records/batch_job_requests/"
+        requests_json_nl += f"flash_batch_{batch:03d}.jsonl"
+        output_jsonl_uri = BATCH_JOB_OUTPUT_PARENT_URI
+        step3_submit_batch_job(requests_json_nl, output_jsonl_uri)
+        time.sleep(60)
 
 
 # Standard Python entry point check.
